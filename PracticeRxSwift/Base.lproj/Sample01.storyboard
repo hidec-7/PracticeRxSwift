@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Sample01 View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="Sample01ViewController" customModule="PracticeRxSwift" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Before..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I78-2S-d8x">
+                                <rect key="frame" x="87" y="240" width="240" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="ehi-ie-jt6"/>
+                                    <constraint firstAttribute="width" constant="240" id="phh-92-8T4"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k3j-Yh-4m3">
+                                <rect key="frame" x="145" y="296" width="124" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="124" id="33u-BP-xAU"/>
+                                    <constraint firstAttribute="height" constant="40" id="mKW-h1-BgW"/>
+                                </constraints>
+                                <state key="normal" title="ログイン"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zda-vJ-Dl5">
+                                <rect key="frame" x="145" y="352" width="124" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="EFn-tt-yAg"/>
+                                    <constraint firstAttribute="width" constant="124" id="lKt-tB-rpy"/>
+                                </constraints>
+                                <state key="normal" title="パスワード"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AXC-tm-h68">
+                                <rect key="frame" x="145" y="408" width="124" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="0AP-zz-TRP"/>
+                                    <constraint firstAttribute="width" constant="124" id="kNX-Ob-lIu"/>
+                                </constraints>
+                                <state key="normal" title="変更"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vgU-qv-WNy">
+                                <rect key="frame" x="145" y="466" width="124" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="oqc-08-dUA"/>
+                                    <constraint firstAttribute="width" constant="124" id="zLX-R8-GfS"/>
+                                </constraints>
+                                <state key="normal" title="Help"/>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="k3j-Yh-4m3" firstAttribute="top" secondItem="I78-2S-d8x" secondAttribute="bottom" constant="16" id="9bh-2e-Bx2"/>
+                            <constraint firstItem="I78-2S-d8x" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="HYg-RY-8zi"/>
+                            <constraint firstItem="AXC-tm-h68" firstAttribute="top" secondItem="zda-vJ-Dl5" secondAttribute="bottom" constant="16" id="JzK-oE-7gW"/>
+                            <constraint firstItem="zda-vJ-Dl5" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="OJ0-o1-l99"/>
+                            <constraint firstItem="vgU-qv-WNy" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Tpm-2L-Iho"/>
+                            <constraint firstItem="zda-vJ-Dl5" firstAttribute="top" secondItem="k3j-Yh-4m3" secondAttribute="bottom" constant="16" id="Wj7-wM-Eb7"/>
+                            <constraint firstItem="AXC-tm-h68" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Y3E-a2-TeM"/>
+                            <constraint firstItem="k3j-Yh-4m3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="lET-wa-kDX"/>
+                            <constraint firstItem="vgU-qv-WNy" firstAttribute="top" secondItem="AXC-tm-h68" secondAttribute="bottom" constant="18" id="p1I-ir-UnH"/>
+                            <constraint firstItem="I78-2S-d8x" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="196" id="yXD-eM-eaD"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="exitButton" destination="AXC-tm-h68" id="1aj-zY-1ae"/>
+                        <outlet property="helpButton" destination="vgU-qv-WNy" id="T4u-wg-7Sd"/>
+                        <outlet property="loginButton" destination="k3j-Yh-4m3" id="VF7-r3-YPl"/>
+                        <outlet property="messageLabel" destination="I78-2S-d8x" id="QNn-S5-Ytb"/>
+                        <outlet property="passwordButton" destination="zda-vJ-Dl5" id="dQj-cX-eiL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="118.52678571428571"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
