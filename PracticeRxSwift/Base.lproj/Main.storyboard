@@ -58,11 +58,24 @@
                                 </constraints>
                                 <state key="normal" title="Help"/>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AlK-ZQ-CMm">
+                                <rect key="frame" x="157" y="630" width="100" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="A7H-sb-aln"/>
+                                    <constraint firstAttribute="height" constant="40" id="uZH-e3-g3Q"/>
+                                </constraints>
+                                <state key="normal" title="nextページ"/>
+                                <connections>
+                                    <segue destination="Q23-uB-O2z" kind="show" identifier="sample02" id="HjG-MQ-PaN"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="k3j-Yh-4m3" firstAttribute="top" secondItem="I78-2S-d8x" secondAttribute="bottom" constant="16" id="9bh-2e-Bx2"/>
+                            <constraint firstItem="AlK-ZQ-CMm" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Agf-eR-ysb"/>
+                            <constraint firstItem="AlK-ZQ-CMm" firstAttribute="top" secondItem="vgU-qv-WNy" secondAttribute="bottom" constant="124" id="HC0-xe-O3A"/>
                             <constraint firstItem="I78-2S-d8x" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="HYg-RY-8zi"/>
                             <constraint firstItem="AXC-tm-h68" firstAttribute="top" secondItem="zda-vJ-Dl5" secondAttribute="bottom" constant="16" id="JzK-oE-7gW"/>
                             <constraint firstItem="zda-vJ-Dl5" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="OJ0-o1-l99"/>
@@ -79,12 +92,84 @@
                         <outlet property="helpButton" destination="vgU-qv-WNy" id="T4u-wg-7Sd"/>
                         <outlet property="loginButton" destination="k3j-Yh-4m3" id="VF7-r3-YPl"/>
                         <outlet property="messageLabel" destination="I78-2S-d8x" id="QNn-S5-Ytb"/>
+                        <outlet property="nextVCButton" destination="AlK-ZQ-CMm" id="J69-Au-yuF"/>
                         <outlet property="passwordButton" destination="zda-vJ-Dl5" id="dQj-cX-eiL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="118.52678571428571"/>
+        </scene>
+        <!--Sample02 View Controller-->
+        <scene sceneID="krZ-Mj-JlW">
+            <objects>
+                <viewController modalPresentationStyle="fullScreen" id="Q23-uB-O2z" customClass="Sample02ViewController" customModule="PracticeRxSwift" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kv8-XB-jJV">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Uzl-5j-eQE">
+                                <rect key="frame" x="67" y="144" width="280" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="280" id="6k6-q6-HaU"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="あと10文字" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gw9-Zz-moq">
+                                <rect key="frame" x="67" y="194" width="280" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="sz7-De-gZm"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="m8u-Z2-zzo">
+                                <rect key="frame" x="67" y="258" width="280" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="280" id="LlD-5c-I9Q"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="あと50文字" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="77g-yI-k8j">
+                                <rect key="frame" x="67" y="308" width="280" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="hnN-fA-ib0"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="IbS-hu-ani"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Uzl-5j-eQE" firstAttribute="centerX" secondItem="kv8-XB-jJV" secondAttribute="centerX" id="1GY-bP-soL"/>
+                            <constraint firstItem="77g-yI-k8j" firstAttribute="top" secondItem="m8u-Z2-zzo" secondAttribute="bottom" constant="16" id="5DC-Bo-nOo"/>
+                            <constraint firstItem="m8u-Z2-zzo" firstAttribute="leading" secondItem="gw9-Zz-moq" secondAttribute="leading" id="7hB-uF-uC8"/>
+                            <constraint firstItem="77g-yI-k8j" firstAttribute="leading" secondItem="m8u-Z2-zzo" secondAttribute="leading" id="M1H-He-qL5"/>
+                            <constraint firstItem="77g-yI-k8j" firstAttribute="trailing" secondItem="m8u-Z2-zzo" secondAttribute="trailing" id="O95-ca-DTz"/>
+                            <constraint firstItem="gw9-Zz-moq" firstAttribute="top" secondItem="Uzl-5j-eQE" secondAttribute="bottom" constant="16" id="T2s-4A-3fk"/>
+                            <constraint firstItem="gw9-Zz-moq" firstAttribute="leading" secondItem="Uzl-5j-eQE" secondAttribute="leading" id="UPI-61-oju"/>
+                            <constraint firstItem="gw9-Zz-moq" firstAttribute="trailing" secondItem="Uzl-5j-eQE" secondAttribute="trailing" id="b5d-Jc-4Rw"/>
+                            <constraint firstItem="m8u-Z2-zzo" firstAttribute="trailing" secondItem="gw9-Zz-moq" secondAttribute="trailing" id="gfk-2C-NOB"/>
+                            <constraint firstItem="m8u-Z2-zzo" firstAttribute="top" secondItem="gw9-Zz-moq" secondAttribute="bottom" constant="40" id="jF7-Xm-R4v"/>
+                            <constraint firstItem="Uzl-5j-eQE" firstAttribute="top" secondItem="IbS-hu-ani" secondAttribute="top" constant="100" id="jan-fR-k0v"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="xeZ-3U-gKA"/>
+                    <connections>
+                        <outlet property="addressCountLabel" destination="77g-yI-k8j" id="ahg-7L-7z0"/>
+                        <outlet property="addressTextField" destination="m8u-Z2-zzo" id="ja4-dj-noE"/>
+                        <outlet property="nameCountLabel" destination="gw9-Zz-moq" id="y1t-Ks-2Yw"/>
+                        <outlet property="nameTextField" destination="Uzl-5j-eQE" id="X6G-y3-LDP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="99G-zX-r6T" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="879.71014492753625" y="117.85714285714285"/>
         </scene>
     </scenes>
     <resources>
