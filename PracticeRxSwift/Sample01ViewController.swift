@@ -18,10 +18,15 @@ class Sample01ViewController: UIViewController {
     @IBOutlet weak var exitButton: UIButton!
     @IBOutlet weak var helpButton: UIButton!
     @IBOutlet weak var messageLabel: UILabel!
+    @IBOutlet weak var nextVCButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupItems()
+    }
+    
+    private func setupItems() {
         loginButton.rx.tap
             .subscribe(onNext: { [weak self] in
                 self?.messageLabel.text = "Tap Login Button"
@@ -43,6 +48,12 @@ class Sample01ViewController: UIViewController {
         helpButton.rx.tap
             .subscribe(onNext: { [weak self] in
                 self?.messageLabel.text = "Tap Help Button"
+            })
+            .disposed(by: disposeBag)
+        
+        nextVCButton.rx.tap
+            .subscribe(onNext: { [weak self] in
+                self?.performSegue(withIdentifier: "sample02", sender: nil)
             })
             .disposed(by: disposeBag)
     }
