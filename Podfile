@@ -8,6 +8,7 @@ target 'PracticeRxSwift' do
   # Pods for PracticeRxSwift
     pod 'RxSwift'
     pod 'RxCocoa'
+    pod 'RxOptional'
 
 # RxTest and RxBlocking make the most sense in the context of unit/integration tests
   target 'PracticeRxSwiftTests' do
