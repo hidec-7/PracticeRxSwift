@@ -12,6 +12,7 @@ import RxCocoa
 class Sample01ViewController: UIViewController {
     
     private let disposeBag = DisposeBag()
+    private let viewModel = Sample03ViewModel()
 
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var passwordButton: UIButton!
@@ -28,52 +29,48 @@ class Sample01ViewController: UIViewController {
     }
     
     private func sampleHelloWorld() {
-        let helloWorldSubject = PublishSubject<String>()
+        viewModel.helloWorldObservable
+            .subscribe(onNext: { [weak self] value in
+                print("value = \(value)")
+            }, onCompleted: {
+                print("onCompleted")
+            }, onDisposed: {
+                print("onDisposed")
+            })
+            .disposed(by: disposeBag)
         
-        helloWorldSubject.subscribe(onNext: { message in
-            print("onNext: \(message)")
-        }, onCompleted: {
-            print("onCompleted")
-        }, onDisposed: {
-            print("onDisposed")
-        })
-        .disposed(by: disposeBag)
-        
-        helloWorldSubject.onNext("Hellow World!")
-        helloWorldSubject.onNext("Hellow World!")
-        helloWorldSubject.onNext("Hellow World!")
-        helloWorldSubject.onCompleted()
+        viewModel.updateItem()
     }
     
-    private func setupItems() {
-        loginButton.rx.tap
-            .subscribe(onNext: { [weak self] in
-                self?.messageLabel.text = "Tap Login Button"
-            })
-            .disposed(by: disposeBag)
-        
-        passwordButton.rx.tap
-            .subscribe(onNext: { [weak self] in
-                self?.messageLabel.text = "Tap Password Button"
-            })
-            .disposed(by: disposeBag)
-        
-        exitButton.rx.tap
-            .subscribe(onNext: { [weak self] in
-                self?.messageLabel.text = "Tap Exit Button"
-            })
-            .disposed(by: disposeBag)
-        
-        helpButton.rx.tap
-            .subscribe(onNext: { [weak self] in
-                self?.messageLabel.text = "Tap Help Button"
-            })
-            .disposed(by: disposeBag)
-        
-        nextVCButton.rx.tap
-            .subscribe(onNext: { [weak self] in
-                self?.performSegue(withIdentifier: "sample02", sender: nil)
-            })
-            .disposed(by: disposeBag)
-    }
+//    private func setupItems() {
+//        loginButton.rx.tap
+//            .subscribe(onNext: { [weak self] in
+//                self?.messageLabel.text = "Tap Login Button"
+//            })
+//            .disposed(by: disposeBag)
+//
+//        passwordButton.rx.tap
+//            .subscribe(onNext: { [weak self] in
+//                self?.messageLabel.text = "Tap Password Button"
+//            })
+//            .disposed(by: disposeBag)
+//
+//        exitButton.rx.tap
+//            .subscribe(onNext: { [weak self] in
+//                self?.messageLabel.text = "Tap Exit Button"
+//            })
+//            .disposed(by: disposeBag)
+//
+//        helpButton.rx.tap
+//            .subscribe(onNext: { [weak self] in
+//                self?.messageLabel.text = "Tap Help Button"
+//            })
+//            .disposed(by: disposeBag)
+//
+//        nextVCButton.rx.tap
+//            .subscribe(onNext: { [weak self] in
+//                self?.performSegue(withIdentifier: "sample02", sender: nil)
+//            })
+//            .disposed(by: disposeBag)
+//    }
 }
