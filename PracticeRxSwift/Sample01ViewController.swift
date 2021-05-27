@@ -23,7 +23,26 @@ class Sample01ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupItems()
+        sampleHelloWorld()
+//        setupItems()
+    }
+    
+    private func sampleHelloWorld() {
+        let helloWorldSubject = PublishSubject<String>()
+        
+        helloWorldSubject.subscribe(onNext: { message in
+            print("onNext: \(message)")
+        }, onCompleted: {
+            print("onCompleted")
+        }, onDisposed: {
+            print("onDisposed")
+        })
+        .disposed(by: disposeBag)
+        
+        helloWorldSubject.onNext("Hellow World!")
+        helloWorldSubject.onNext("Hellow World!")
+        helloWorldSubject.onNext("Hellow World!")
+        helloWorldSubject.onCompleted()
     }
     
     private func setupItems() {
